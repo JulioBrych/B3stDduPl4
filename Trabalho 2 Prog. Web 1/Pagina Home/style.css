@@ -1,0 +1,22 @@
+
+body{
+    background-color: #999999;
+}
+header{
+  display:  flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  
+}
+#rodape{
+    height: 60px;
+    display: flex;
+    justify-items: self-end;
+}
+#textoCanto{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    font-size: 6px;
+}
