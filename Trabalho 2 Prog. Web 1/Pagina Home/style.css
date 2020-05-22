@@ -12,6 +12,10 @@ header{
 
   
 }
+#textoPrincipal{
+    display: flex;
+    flex-direction: column;
+}
 #rodape{
     height: 60px;
     display: flex;
