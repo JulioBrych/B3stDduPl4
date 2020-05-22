@@ -1,31 +1,92 @@
 
 body{
+    margin: 0;
     background-color: #999999;
 }
 header{
-  display:  flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  font-family: Calibri,'Gill Sans', 'Trebuchet MS', sans-serif;
-  letter-spacing: -2px;
+    color: rgb(56, 56, 56);
+    padding: 26px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    display:  flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font-family: Calibri,'Gill Sans', 'Trebuchet MS', sans-serif;
+    letter-spacing: -2px;
 
   
 }
+.menu{
+    width: 100%;
+    height: 30px;
+    background-color: white;
+    font-family: Calibri,'Gill Sans', 'Trebuchet MS', sans-serif;
+}
+.menu ul{
+    margin: 0;
+    padding-left: 42%;
+    list-style: none;
+    position: relative;
+    display: inline-block;
+    
+}
+.menu ul li{
+    float: left;
+}
+.menu a{
+    padding: 3px 10px;
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    background-color: white;
+    color: rgb(56, 56, 56);
+}
+.menu a:hover {
+    border: solid 2px black;
+}
+.menu ul ul{
+    position: absolute;
+    visibility: hidden;
+}
+.menu ul li:hover ul{
+    visibility: visible;
+}
+#submenu{
+    padding: 0;
+    display: list-item;
+}
+#submenu a{
+    float: left;
+    position: static;
+}
+#imagen{
+    
+    padding-bottom: 12px;
+    background-color: white;
+}
 #textoPrincipal{
+    padding-left: 35px;
+    color: rgb(214, 214, 214);
+    width: 320px;
+    height: 300px;
     display: flex;
     flex-direction: column;
-}
+    justify-content: space-around;
+    font-family: Calibri,'Gill Sans', 'Trebuchet MS', sans-serif;
+}   
 #rodape{
+    float: right;
     height: 60px;
     display: flex;
-    justify-items: self-end;
+    align-items: center;
     font-family: Calibri,'Gill Sans', 'Trebuchet MS', sans-serif;
 }
 #textoCanto{
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    justify-content: space-between;
     font-size: 6px;
     font-family: Calibri,'Gill Sans', 'Trebuchet MS', sans-serif;
 }
