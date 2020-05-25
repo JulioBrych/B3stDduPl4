@@ -77,9 +77,26 @@ header{
     position: static;
 }
 #imagen{
-    
+    min-height: 400px;
+    background-size:  100% 550px;
+    background-repeat:no-repeat;
+    background-image:  url("https://www.thespruce.com/thmb/Fjay3g7l063ZyurLycUnobVStIU=/2122x1415/filters:fill(auto,1)/153596483-57c789443df78c71b664e496.jpg") ;
     padding-bottom: 12px;
     background-color: white;
+}
+#imagen ul{
+    padding-left: 65%;
+    padding-top: 170px;
+    font-family: Calibri,'Gill Sans', 'Trebuchet MS', sans-serif;
+    color: white;
+    text-decoration: none;
+    list-style: none;
+}
+#Nome{
+    font-size: 30px;
+}
+#Semana{
+    font-size: 18px;
 }
 #textoPrincipal{
     padding-left: 35px;
@@ -93,7 +110,7 @@ header{
 }   
 #rodape{
     float: right;
-    position: absolute;
+    position: fixed;
     bottom:0;
     right: 0;
     height: 60px;
