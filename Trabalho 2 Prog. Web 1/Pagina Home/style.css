@@ -29,11 +29,10 @@ header{
     height: 30px;
     background-color: white;
     font-family: Calibri,'Gill Sans', 'Trebuchet MS', sans-serif;
-    text-align: right;
 }
 .menu ul{
     margin: 0;
-    padding-left: 42%;
+    padding-left: 50%;
     list-style: none;
     position: relative;
     display: inline-block;
