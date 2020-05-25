@@ -20,6 +20,7 @@ header{
     height: 30px;
     background-color: white;
     font-family: Calibri,'Gill Sans', 'Trebuchet MS', sans-serif;
+    text-align: right;
 }
 .menu ul{
     margin: 0;
@@ -87,4 +88,11 @@ header{
     justify-content: space-between;
     font-size: 6px;
     font-family: Calibri,'Gill Sans', 'Trebuchet MS', sans-serif;
+}
+#titulo{
+    color: rgb(56, 56, 56);
+    text-align: center;   
+    font-family: Calibri,'Gill Sans', 'Trebuchet MS', sans-serif;
+    
+    
 }
