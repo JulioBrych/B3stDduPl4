@@ -132,3 +132,11 @@ header{
    list-style-type: square;
    padding-left: 60%;
 }
+
+.formulario {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+  
+.formulario input {
+   align-items: center;
+  }
