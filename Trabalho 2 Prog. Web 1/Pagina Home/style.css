@@ -120,3 +120,7 @@ header{
     justify-content: space-around;
     min-height:200px;
 }
+#listaBeneficios{
+   list-style-type: square;
+   padding-left: 60%;
+}
