@@ -56,6 +56,7 @@ header{
 #submenu{
     padding: 0;
     display: list-item;
+    display:flex;
 }
 #submenu a{
     float: left;
@@ -91,10 +92,22 @@ header{
     font-size: 6px;
     font-family: Calibri,'Gill Sans', 'Trebuchet MS', sans-serif;
 }
-#titulo{
+#subtitulo{
     color: rgb(56, 56, 56);
     text-align: center;   
     font-family: Calibri,'Gill Sans', 'Trebuchet MS', sans-serif;
     
     
+}
+#vertical{
+    display: flex;
+    flex-direction:row;
+    justify-content: space-around;
+}
+
+#horizontal{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    min-height: 600px;
 }
