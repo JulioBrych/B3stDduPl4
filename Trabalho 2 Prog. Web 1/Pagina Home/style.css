@@ -1,7 +1,12 @@
 
 body{
+    height: 100%;
     margin: 0;
     background-color: #999999;
+}
+#geral{
+    min-height:100%;
+    position:relative;
 }
 header{
     color: rgb(56, 56, 56);
@@ -88,6 +93,9 @@ header{
 }   
 #rodape{
     float: right;
+    position: absolute;
+    bottom:0;
+    right: 0;
     height: 60px;
     display: flex;
     align-items: center;
