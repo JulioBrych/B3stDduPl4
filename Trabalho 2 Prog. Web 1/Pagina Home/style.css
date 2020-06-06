@@ -128,8 +128,9 @@ header{
 }
 #subtitulo{
     color: rgb(56, 56, 56);
-    text-align: center;   
-    font-family: Calibri,'Gill Sans', 'Trebuchet MS', sans-serif;
+    text-align: center;  
+    font-style: normal;
+    font-family: 'Muli', sans-serif;
     
     
 }
@@ -148,6 +149,8 @@ header{
 #listaBeneficios{
    list-style-type: square;
    padding-left: 60%;
+   font-family: 'Muli', sans-serif;
+
 }
 
 .formulario {
@@ -156,7 +159,17 @@ header{
   
 .formulario input {
    align-items: center;
+  
   }
+  .formulario label{
+    text-align: left;
+    font-size: large;
+    margin-left: 32px;
+    display: inline-block;
+    width: 100px;
+    font-family: 'Muli', sans-serif;
+    
+}
   .telalogin{
     background-color:  rgb(56, 56, 56);
     font-family:  Calibri,'Gill Sans', 'Trebuchet MS', sans-serif;
@@ -188,4 +201,11 @@ header{
     font-size: 12px;
     font-family: Calibri,'Gill Sans', 'Trebuchet MS', sans-serif;
     color:black;
+}
+.botaoAjude{
+    background-color: white;
+    font-family: Calibri,'Gill Sans', 'Trebuchet MS', sans-serif;
+    width: 120px;
+    text-align: left;
+    font-size: 14px;
 }

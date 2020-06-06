@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Muli:wght@300&family=Questrial&display=swap" rel="stylesheet">
 </head>
 <body>
     <div id="Geral">
@@ -17,10 +18,10 @@
                 <li><a href="@">Home</a></li>
                 <li><a href="@">Ajude</a>
                     <ul id="submenu">
-                        <li><a href="@">Blumenau</a></li>
-                        <li><a href="@">Massaranduba</a></li>
-                        <li><a href="@">Pomerode</a></li>
-                        <li><a href="@">Rios dos Cedros</a></li>
+                        <li><button class= "botaoAjude" onclick="ajudeBlumenau()">Blumenau</button></li>
+                        <li><button class= "botaoAjude" onclick="ajudeMassaranduba()">Massaranduba</button></li>
+                        <li><button class= "botaoAjude" onclick="ajudePomerode()">Pomerode</button></li>
+                        <li><button class= "botaoAjude" onclick="ajudeRioDosCedros()">Rios dos Cedros</button></li>
                     </ul>
                 </li>
                 <li><a href="@">Cadastre</a></li>
@@ -40,19 +41,19 @@
         <form id="cadastroform">
             
             <label for="fnome">Nome *</label>
-            <input id = 'nome' type="text"> <br> 
+            <input id = 'fnome' type="text"> <br> 
             <label for="fidade">Idade</label>
-            <input id = 'idade' type="number"> <br> 
+            <input id = 'fidade' type="number"> <br> 
             <label for="fsexo">Sexo *</label>
-            <input id = 'sexo' type="text"> <br> 
+            <input id = 'fsexo' type="text"> <br> 
             <label for="fpeso">Peso</label>
-            <input id = 'peso' type="number"> <br> 
+            <input id = 'fpeso' type="number"> <br> 
             <label for="fmunicipio">Município *</label>
-            <input id = 'municipio' type="text"> <br> 
+            <input id = 'fmunicipio' type="text"> <br> 
             <label for="femail">E-mail *</label>
-            <input id = 'email' type="email"> <br> 
+            <input id = 'femail' type="email"> <br> 
             <label for="fsenha">Senha *</label>
-            <input id = 'senha' type="password"> <br> 
+            <input id = 'fsenha' type="password"> <br> 
             <input type="submit" value="OK">   
            
           
@@ -61,10 +62,11 @@
         <footer id="rodape">
             <div id="textoCanto">
                 <h1>criado por b&b</h1>
-                <h2>Deixe um guaxinin roubar seu coração ;)</h2>
+                <h2>Deixe um guaxinim roubar seu coração ;)</h2>
             </div>
             <img src="https://b.kisscc0.com/20180813/aaw/kisscc0-raccoon-silhouette-drawing-logo-racoon-silhouette-5b714110e93e51.6737730515341488809554.png"
             width="75" height="50">
         </footer>
+        <script src="javaS.js"></script>  
 </body>
 </html>
