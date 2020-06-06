@@ -20,4 +20,3 @@ function ajudeRioDosCedros() {
 function ajudePomerode() {
     alert("Waschbär Niedlicher Allesfresser LTDA.\nCNPJ: 91.532.874/0001-45\nBanco: Banco do Brasil \nAgência: 5548-7\nC/C: 68598-7");
 }
-

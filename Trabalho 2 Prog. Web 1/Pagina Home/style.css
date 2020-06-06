@@ -150,13 +150,15 @@ header{
 }
 
 .formulario {
-    font-family: Calibri,'Gill Sans', 'Trebuchet MS', sans-serif;
+    font-family: 'Muli', sans-serif;
+    padding: left 50%;
   }
   
 .formulario input {
    align-items: center;
    background-color: rgb(223, 223, 223);
    margin-bottom: 10px;
+   
   
   }
   .formulario label{
@@ -169,13 +171,17 @@ header{
     
 }
 .formulario button{
-    margin-left: 255px;
+    font-family:  Calibri,'Gill Sans', 'Trebuchet MS', sans-serif;
     background-color: rgb(223, 223, 223);
+    display: inline-block;
+    
+  
 
 }
   .telalogin{
     background-color:  rgb(56, 56, 56);
     font-family:  Calibri,'Gill Sans', 'Trebuchet MS', sans-serif;
+    margin:auto
   }
   .botaologin {
     background-color:  #999999 ;
@@ -199,6 +205,7 @@ header{
     font-family: Calibri,'Gill Sans', 'Trebuchet MS', sans-serif;
     color:black;
     font-size: 12px;
+    margin:auto
 }
 #lembrar{
     font-size: 12px;
@@ -213,7 +220,8 @@ header{
     font-size: 14px;
 }
 .formLogin{
-    display: flex;
-    flex-direction: column;
-    align-content: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    
 }
