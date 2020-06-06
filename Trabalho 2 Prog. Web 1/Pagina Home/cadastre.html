@@ -11,12 +11,12 @@
     <div id="Geral">
         <header>
             <h1 id="titulo">Guaxinins do Vale</h1>
-            <h2 id="login">Login</h2>
+            <a id="login" href="login.html">Login</a>
         </header>
         <nav class="menu">
             <ul>
-                <li><a href="@">Home</a></li>
-                <li><a href="@">Ajude</a>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html">Ajude</a>
                     <ul id="submenu">
                         <li><button class= "botaoAjude" onclick="ajudeBlumenau()">Blumenau</button></li>
                         <li><button class= "botaoAjude" onclick="ajudeMassaranduba()">Massaranduba</button></li>
@@ -24,9 +24,9 @@
                         <li><button class= "botaoAjude" onclick="ajudeRioDosCedros()">Rios dos Cedros</button></li>
                     </ul>
                 </li>
-                <li><a href="@">Cadastre</a></li>
-                <li><a href="@">Lojaxinim</a></li>
-                <li><a href="@">Sobre</a></li>
+                <li><a href="cadastre.html">Cadastre</a></li>
+                <li><a href="lojaxinim.html">Lojaxinim</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
             </nav>            
         </div>
        
@@ -41,23 +41,24 @@
         <form id="cadastroform">
             
             <label for="fnome">Nome *</label>
-            <input id = 'fnome' type="text"> <br> 
+            <input id = 'fnome' type="text" required> <br> 
             <label for="fidade">Idade</label>
             <input id = 'fidade' type="number"> <br> 
             <label for="fsexo">Sexo *</label>
-            <input id = 'fsexo' type="text"> <br> 
+            <input id = 'fsexo' type="text" required> <br> 
             <label for="fpeso">Peso</label>
             <input id = 'fpeso' type="number"> <br> 
             <label for="fmunicipio">Município *</label>
-            <input id = 'fmunicipio' type="text"> <br> 
+            <input id = 'fmunicipio' type="text" required> <br> 
             <label for="femail">E-mail *</label>
-            <input id = 'femail' type="email"> <br> 
+            <input id = 'femail' type="email" required> <br> 
             <label for="fsenha">Senha *</label>
-            <input id = 'fsenha' type="password"> <br> 
-            <input type="submit" value="OK">   
+            <input id = 'fsenha' type="password" required> <br> 
+           
            
           
         </form>
+        <button type="submit" form="cadastroform" value="Submit">OK</button>
     </div> 
         <footer id="rodape">
             <div id="textoCanto">
