@@ -21,7 +21,7 @@ body{
     color: black;
 }
 #esqueceusuasenha{
-    text-decoration: none;
+
     font-family: Calibri,'Gill Sans', 'Trebuchet MS', sans-serif;
     color:black;
     font-size: 12px;
@@ -37,6 +37,19 @@ body{
     margin: 0;
     padding-left: 40%;
     padding-top: 5%
-   
     
+}
+.formLogin label{
+    text-align: left;
+    font-size: large;
+    margin-left: 32px;
+    display: inline-block;
+    width: 100px;
+    font-family: 'Muli', sans-serif;    
+}
+
+.formLogin input {
+    align-items: center;
+    background-color: rgb(223, 223, 223);
+    margin-bottom: 10px;
 }
