@@ -34,7 +34,9 @@ body{
 }
 .formLogin{
     width: 50%;
-    margin: auto;
+    margin: 0;
+    padding-left: 40%;
+    padding-top: 5%
    
     
 }

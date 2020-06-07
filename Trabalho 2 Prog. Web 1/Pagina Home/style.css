@@ -110,7 +110,8 @@ header{
 }   
 #rodape{
     float: right;  
-    display: block;
+    display: flex;
+    flex-direction: row;
   
 }
 #textoCanto{
@@ -151,7 +152,7 @@ header{
 
 .formulario {
     font-family: 'Muli', sans-serif;
-    padding: left 50%;
+    padding-left: 40%;
   }
   
 .formulario input {
@@ -174,7 +175,7 @@ header{
     font-family:  Calibri,'Gill Sans', 'Trebuchet MS', sans-serif;
     background-color: rgb(223, 223, 223);
     display: inline-block;
-    
+    margin-left: 30px;
   
 
 }  
@@ -184,4 +185,36 @@ header{
     width: 120px;
     text-align: left;
     font-size: 14px;
+}
+#Curiosidade{
+    list-style: none;
+}
+#Curiosidade h3{
+    font-size: 22px;
+}
+#Curiosidade ul {
+    list-style: none;
+    font-size: 15px;
+}
+
+@media screen and (max-width: 697px) {
+    .menu{
+        display: flex;
+        flex-direction: column;
+    }
+    .menu ul{
+    padding-left: 0;
+    align-items: center;
+    }
+    #vertical{
+        min-height: 600px;
+        flex-direction: column;
+        justify-content: space-around;
+        margin-left: 35%;
+        margin-right: 35%;
+    }
+    .formulario {
+        padding-left: 27%;
+    }
+    
 }
