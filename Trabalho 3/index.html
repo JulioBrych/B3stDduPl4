@@ -1,39 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <div class= "formulario">       
-        <form id="cadastroempregado">
-            
-            <label for="fnome">Nome*</label>
-            <input id = 'fnome' type="text" > <br> 
-            <label for="fsalario">Salario*</label>
-            <input id = 'fsalario' type="number" > <br> 
-            <label for="fidade">Idade*</label>
-            <input id = 'fidade' type="number" > <br> 
-            <label for="favatar">Avatar*</label>
-            <input id = 'favatar' type="url" > <br> 
-                      
-        </form>
-        <button type="reset"  form="cadastroempregado" value="Cancelar">Cancelar</button>
-        <button onclick="enviar()" type="submit" form="cadastroempregado" value="Salvar">Cadastrar</button>
-       
-    </div> 
-    <div class = "apresentacaodados">
-        <table id="tabelaempregados" border ="1">
-            <tr>ID</tr>
-            <tr>Nome</tr>
-            <tr>Salário</tr>
-            <tr>Idade</tr>
-            <tr>Avatar</tr>
-            <tr>Ações</tr>
-        </table>
-    </div>
+
+<body onload="atualiza()">
     <script src="javaS.js"></script> 
+   
+    <p id="titulo">Adicionando novo Empregado</p>
+    <p id=idAtual></p>
+    
+    <form id="empForm">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required ><br>
+        <label for="salario">Salário</label>
+        <input type="number" id="salario" name="salario" required><br>
+        <label for="idade">Idade</label>
+        <input type="number" id="idade" name="idade" required><br>
+        <label for="perfil">Avatar</label>
+        <input type="url" id="perfil" name="perfil" ><br>
+        
+    </form>
+        <button type="submit" form="empForm" id="botao"  onclick="verOQueFaz()">Salvar</button>
+        <input type="reset" form="empForm" value="Cancelar">
+    <table id="tabela">
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Salário</th>
+            <th>Idade</th>
+            <th>Avatar</th>
+            <th>Ações</th>
+        </tr>
+    </table>
 </body>
+
 </html>
