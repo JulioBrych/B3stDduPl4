@@ -46,8 +46,11 @@ function mostrarDadosDoEmpregado(empregado) {
     td.innerHTML = idade;
     tr.appendChild(td);
 
+    var imagem = avatar;
     td = document.createElement('td');
-    td.img= src="avatar";
+    var teste = '<img src="' + imagem + '" alt="imagem" width="100%" height="150px"></img>'
+    td.innerHTML =
+        teste
     tr.appendChild(td);
 
     var id = identificador;
@@ -193,7 +196,8 @@ function enviar() {
     var novoEmpregado = {
         name : document.getElementById("nome").value,
         salary :  document.getElementById("salario").value,
-        age:document.getElementById("idade").value
+        age:document.getElementById("idade").value,
+        profile_image: document.getElementById("perfil").value
     };
    
     

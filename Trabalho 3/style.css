@@ -7,6 +7,7 @@ p{
 th{
     background-color: rgb(184, 134, 230);
     padding: 5px;
+    
 }
 tr:nth-child(even) {background-color: #c6bbd3;}
 tr:nth-child(odd) {background-color: #ffffff;}
