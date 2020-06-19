@@ -34,31 +34,31 @@ function mostrarDadosDoEmpregado(empregado) {
     td.innerHTML = identificador;
     tr.appendChild(td);
 
-    td = document.createElement('td');
-    td.innerHTML = nome;
-    tr.appendChild(td);
+    tn = document.createElement('tn');
+    tn.innerHTML = nome;
+    tr.appendChild(tn);
 
-    td = document.createElement('td');
-    td.innerHTML = salario;
-    tr.appendChild(td);
+    ts = document.createElement('ts');
+    ts.innerHTML = salario;
+    tr.appendChild(ts);
 
-    td = document.createElement('td');
-    td.innerHTML = idade;
-    tr.appendChild(td);
+    ti = document.createElement('ti');
+    ti.innerHTML = idade;
+    tr.appendChild(ti);
 
     var imagem = avatar;
-    td = document.createElement('td');
-    var teste = '<img src="' + imagem + '" alt="imagem" width="100%" height="150px"></img>'
-    td.innerHTML =
+    ta = document.createElement('ta');
+    var teste = '<img src="' + imagem + '" alt="imagem" width="113px" height="150px"></img>'
+    ta.innerHTML =
         teste
-    tr.appendChild(td);
+    tr.appendChild(ta);
 
     var id = identificador;
-    td = document.createElement('td');
-    td.innerHTML =
+    tp = document.createElement('tp');
+    tp.innerHTML =
     '<a href="#" onclick="editar(\'' + id + '\')">Editar</a> ' +
     '<a href="#" onclick="excluir(\'' + id + '\')">Excluir</a>';
-    tr.appendChild(td);
+    tr.appendChild(tp);
 
     table.appendChild(tr);
 }

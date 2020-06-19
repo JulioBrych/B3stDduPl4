@@ -1,13 +1,68 @@
 body{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
+#Cabecario{
+    border: none;
+}
+#Cabecario th{
+    border: solid 2px black ;
+    border-right: solid 1px black;
+    padding: 0;
+}
 p{
     display: inline;
 }
 th{
     background-color: rgb(184, 134, 230);
     padding: 5px;
+    align-items: center;
     
 }
 tr:nth-child(even) {background-color: #c6bbd3;}
 tr:nth-child(odd) {background-color: #ffffff;}
+tr{
+    border: solid 2px black ;
+    display: flex;
+    flex-direction: row;
+    border-bottom: solid 1px black ;
+}
+td{
+width: 300px;
+height: 150px;
+border-right: solid 2px black;
+}
+tn{
+    width: 250px;
+    height: 150px;
+    border-right: solid 2px black;
+}
+ts{
+    width: 130px;
+    height: 150px;
+    border-right: solid 2px black;
+}
+ti{
+    width: 100px;
+    height: 150px;
+    border-right: solid 2px black;
+}
+ta{
+    width: 115px;
+    height: 150px;
+    
+}
+ta img {
+    border-right: solid 2px black;
+}
+tp {
+    width: 70px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+tp a{
+    text-decoration: none;
+    padding-top: 60%;
+}
