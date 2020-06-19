@@ -1,3 +1,24 @@
+function verificaCampos(){
+
+
+    var inpNom = document.getElementById("nome");
+    var inSal = document.getElementById("salario");
+    var inIda = document.getElementById("idade");
+    if (!inpNom.checkValidity()) {
+     alert(inpNom.validationMessage);
+    }
+    else if (!inSal.checkValidity()) {
+        alert(inSal.validationMessage);
+    }
+    else if(!inIda.checkValidity()){
+        alert(inIda.validationMessage);
+    }
+    else{
+        verOQueFaz();
+    }
+}
+
+
 function mostrarDadosDoEmpregado(empregado) {
     var identificador = empregado.id;
     var nome = empregado.employee_name;
@@ -39,7 +60,7 @@ function mostrarDadosDoEmpregado(empregado) {
     table.appendChild(tr);
 }
 function verOQueFaz(){
-     if( document.getElementById("botao").value == "Editar")
+     if( document.getElementById("botao").innerHTML == "Editar")
      {        
         var xhttp = new XMLHttpRequest();       
         xhttp.open('PUT', '	http://rest-api-employees.jmborges.site/api/v1/update/'+document.getElementById("idAtual").innerHTML, true);
@@ -54,9 +75,9 @@ function verOQueFaz(){
         };
         
         xhttp.onreadystatechange = function() {
-            alert('Entrou3');
+    
             if (this.readyState == 4) {
-                alert('Entrou4');
+             
                 if (this.status == 200) {
                     // sucesso na requisicao
                     var retorno = JSON.parse(this.responseText);
@@ -74,7 +95,7 @@ function verOQueFaz(){
         };
          var formatoJson = JSON.stringify(empregadoEditado);
          xhttp.send(formatoJson);
-         alert('EntrouSEND');
+         alert('bruxaria2');// NAO APAGAR ESSA MERDA
      }
      else
      {
@@ -131,11 +152,6 @@ function excluir(id) {
     }
 }
 
-
-
-//console.log("Empregado: Nome:" + nome + ", Salário:" + salario + ", Idade: " + idade);
-
-// console.log(nome + ", " + salario + ", " + idade + ", , [editar]() [excluir]()");
 
 
 //listando dados
@@ -203,5 +219,5 @@ function enviar() {
    
     var formatoJson = JSON.stringify(novoEmpregado);
     xhttp.send(formatoJson);
-    alert("bruxaria");
+    alert("bruxaria");// NAO APAGAR ESSA MERDA
 }
