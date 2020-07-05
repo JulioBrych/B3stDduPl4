@@ -78,7 +78,7 @@ function verOQueFaz(){
         };
         
         xhttp.onreadystatechange = function() {
-    
+            
             if (this.readyState == 4) {
              
                 if (this.status == 200) {
@@ -98,7 +98,7 @@ function verOQueFaz(){
         };
          var formatoJson = JSON.stringify(empregadoEditado);
          xhttp.send(formatoJson);
-         alert('bruxaria2');// NAO APAGAR ESSA MERDA
+         atualiza();
      }
      else
      {
@@ -162,8 +162,15 @@ function atualiza(){
 
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
-    
+        debugger
+        var table = document.getElementById("tabela");
+        var elemento = document.getElementsByName("tr")
+        if(elemento.length != 0){
+            table.removeChild(elemento);
+        }
+        
         if (this.readyState == 4) {
+           
             if (this.status == 200) {
                 // sucesso na requisicao
                 var retorno = JSON.parse(this.responseText);
@@ -171,6 +178,7 @@ function atualiza(){
                 for (var i = 0; i < empregados.length; i++) {
                     var empregado = empregados[i];
                     mostrarDadosDoEmpregado(empregado);
+                    
                 }
             } else {
                 //erro na requisicao
