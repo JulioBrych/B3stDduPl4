@@ -68,10 +68,10 @@ function verOQueFaz(){
        
 
         var empregadoEditado = {
-            name : document.getElementById("nome").value,
-            salary :  document.getElementById("salario").value,
-            age: document.getElementById("idade").value,
-            profile_image: document.getElementById("perfil").value
+            nome : document.getElementById("nome").value,
+            cidade :  document.getElementById("cidade").value,
+            idade: document.getElementById("idade").value,
+            votos: document.getElementById("votos").value
         };
         
         xhttp.onreadystatechange = function() {
@@ -136,7 +136,7 @@ function poeNoForm(empregado)
 }
 function excluir(id) {
     if (confirm("Deseja realmente apagar este empregado?")) {
-        str1 = 'http://rest-api-employees.jmborges.site/api/v1/delete/';
+        str1 = 'https://private-071734-juliobrych.apiary-mock.com/guaxinim/';
         str = str1 + id;
         var xhttp = new XMLHttpRequest();
         xhttp.open('DELETE', str, true);
@@ -191,7 +191,7 @@ function atualiza(){
 }
 
 
-//enviando dados { "name": "test", "salary": "123", "age": "23" }
+//enviando dados { "nome": "test", "cidade": "123", "idade": "23" }
 function enviar() {
     
     var xhttp = new XMLHttpRequest();
@@ -200,10 +200,10 @@ function enviar() {
     
     //objeto fixo de exemplo - no trabalho tem que obter os dados do formulário
     var novoEmpregado = {
-        name : document.getElementById("nome").value,
-        salary :  document.getElementById("salario").value,
-        age:document.getElementById("idade").value,
-        profile_image: document.getElementById("perfil").value
+        nome : document.getElementById("nome").value,
+        cidade :  document.getElementById("cidade").value,
+        idade : document.getElementById("idade").value,
+        votos: document.getElementById("votos").value
     };
    
     
@@ -217,7 +217,7 @@ function enviar() {
                
                 //sucesso na requisicao
                 var retorno = JSON.parse(this.responseText);
-                var nome = retorno.data.name;
+                var nome = retorno.dados.name;
                 alert("O empregado " + nome + " foi cadastrado com sucesso!");
             } else {
                 //erro na requisicao

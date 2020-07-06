@@ -12,6 +12,9 @@ body{
 p{
     display: inline;
 }
+#Cabecario{
+    padding:  0px;
+}
 th{
     background-color: rgb(184, 134, 230);
     padding: 5px;
