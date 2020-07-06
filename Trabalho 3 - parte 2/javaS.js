@@ -2,7 +2,7 @@ function verificaCampos(){
 
 
     var inpNom = document.getElementById("nome");
-    var inSal = document.getElementById("salario");
+    var inSal = document.getElementById("Cidade");
     var inIda = document.getElementById("idade");
     if (!inpNom.checkValidity()) {
      alert(inpNom.validationMessage);
@@ -19,13 +19,12 @@ function verificaCampos(){
 }
 
 
-function mostrarDadosDoEmpregado(empregado) {
-    debugger
-    var identificador = empregado.id;
-    var nome = empregado.employee_name;
-    var salario = empregado.employee_salary;
-    var idade = empregado.employee_age;
-    var avatar = empregado.profile_image;
+function mostrarDadosDoEmpregado(guaxinims) {
+    var identificador = guaxinims.id;
+    var nome = guaxinims.nome;
+    var cidade = guaxinims.cidade;
+    var idade = guaxinims.idade;
+    var votos = guaxinims.votos;
 
     var table = document.getElementById("tabela");
 
@@ -39,20 +38,17 @@ function mostrarDadosDoEmpregado(empregado) {
     tn.innerHTML = nome;
     tr.appendChild(tn);
 
-    ts = document.createElement('ts');
-    ts.innerHTML = salario;
-    tr.appendChild(ts);
+    tc = document.createElement('tc');
+    tc.innerHTML = cidade;
+    tr.appendChild(tc);
 
     ti = document.createElement('ti');
     ti.innerHTML = idade;
     tr.appendChild(ti);
 
-    var imagem = avatar;
-    ta = document.createElement('ta');
-    var teste = '<img src="' + imagem + '" alt="imagem" width="113px" height="150px"></img>'
-    ta.innerHTML =
-        teste
-    tr.appendChild(ta);
+    tv = document.createElement('tv');
+    tv.innerHTML = votos
+    tr.appendChild(tv);
 
     var id = identificador;
     tp = document.createElement('tp');
@@ -133,10 +129,10 @@ function editar(id) {
 }
 function poeNoForm(empregado)
 {   
-    document.getElementById("nome").value = empregado.employee_name;
-    document.getElementById("salario").value = empregado.employee_salary;
-    document.getElementById("idade").value = empregado.employee_age;
-    document.getElementById("perfil").value  = empregado.profile_image;
+    document.getElementById("nome").value = empregado.nome;
+    document.getElementById("salario").value = empregado.cidade;
+    document.getElementById("idade").value = empregado.idade;
+    document.getElementById("votos").value  = empregado.votos;
 }
 function excluir(id) {
     if (confirm("Deseja realmente apagar este empregado?")) {
@@ -163,7 +159,7 @@ function atualiza(){
 
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
-
+        debugger
         var table = document.getElementById("tabela");
         var elemento = document.getElementsByName("tr")
         if(elemento.length != 0){
@@ -175,10 +171,10 @@ function atualiza(){
             if (this.status == 200) {
                 // sucesso na requisicao
                 var retorno = JSON.parse(this.responseText);
-                var empregados = retorno.data; //array de empregados
-                for (var i = 0; i < empregados.length; i++) {
-                    var empregado = empregados[i];
-                    mostrarDadosDoEmpregado(empregado);
+                var guaxinims = retorno.dados;
+                for (var i = 0; i < guaxinims.length; i++) {
+                    var guaxinim = guaxinims[i];
+                    mostrarDadosDoEmpregado(guaxinims);
                     
                 }
             } else {
@@ -188,7 +184,7 @@ function atualiza(){
         }
       
     };
-    xhttp.open('GET', 'http://rest-api-employees.jmborges.site/api/v1/employees', true);
+    xhttp.open('GET', 'https://private-071734-juliobrych.apiary-mock.com/guaxinim', true);
     xhttp.send();
     
 }
