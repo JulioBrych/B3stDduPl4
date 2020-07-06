@@ -11,29 +11,29 @@
 <body onload="atualiza()">
     <script src="javaS.js"></script> 
    
-    <p id="titulo">Adicionando novo Empregado</p>
+    <p id="titulo">Adicionando novo Guaxinim</p>
     <p id=idAtual></p>
     
     <form id="empForm">
         <label for="nome">Nome:</label>
         <input type="text" id="nome" name="nome" required minlength=2><br>
-        <label for="salario">Salário</label>
-        <input type="number" id="salario" name="salario" required minlength=1 ><br>
-        <label for="idade">Idade</label>
+        <label for="cidade">Cidade:</label>
+        <input type="text" id="cidade" name="Cidade" required minlength=1 ><br>
+        <label for="idade">Idade:</label>
         <input type="number" id="idade" name="idade" required minlength=1><br>
-        <label for="perfil">Avatar</label>
-        <input type="url" id="perfil" name="perfil" ><br>
+        <label for="votos">Votos:</label>
+        <input type="number" id="votos" name="votos" ><br>
         
     </form>
         <button type="submit" form="empForm" id="botao"  onclick="verificaCampos()">Salvar</button>
         <input type="reset" form="empForm" value="Cancelar">
     <table id="tabela">
         <th id="Cabecario">
-            <th width = "304px" >Id</th>
+            <th width = "54px" >Id</th>
             <th width = "252px" >Nome</th>
-            <th width = "133px" >Salário</th>
+            <th width = "133px" >Cidade</th>
             <th width = "103px" >Idade</th>
-            <th width = "114px" >Avatar</th>
+            <th width = "103px" >Votos</th>
             <th width = "73px" border-right = "solid 2px black">Ações</th>
         </th>
     </table>

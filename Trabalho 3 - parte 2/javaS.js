@@ -47,7 +47,7 @@ function mostrarDadosDoEmpregado(guaxinims) {
     tr.appendChild(ti);
 
     tv = document.createElement('tv');
-    tv.innerHTML = votos
+    tv.innerHTML = votos;
     tr.appendChild(tv);
 
     var id = identificador;
@@ -63,7 +63,7 @@ function verOQueFaz(){
      if( document.getElementById("botao").innerHTML == "Editar")
      {        
         var xhttp = new XMLHttpRequest();       
-        xhttp.open('PUT', '	http://rest-api-employees.jmborges.site/api/v1/update/'+document.getElementById("idAtual").innerHTML, true);
+        xhttp.open('PUT', '	https://private-071734-juliobrych.apiary-mock.com/guaxinim/'+document.getElementById("idAtual").innerHTML, true);
         xhttp.setRequestHeader('Content-type', 'application/json');
        
 
@@ -106,7 +106,7 @@ function verOQueFaz(){
 function editar(id) {
 
     var xhttp = new XMLHttpRequest();
-    xhttp.open('GET', '	http://rest-api-employees.jmborges.site/api/v1/employee/'+id, true);
+    xhttp.open('GET', '	https://private-071734-juliobrych.apiary-mock.com/guaxinim/'+id, true);
     xhttp.send();
     xhttp.onreadystatechange = function() {
     
@@ -130,7 +130,7 @@ function editar(id) {
 function poeNoForm(empregado)
 {   
     document.getElementById("nome").value = empregado.nome;
-    document.getElementById("salario").value = empregado.cidade;
+    document.getElementById("Cidade").value = empregado.cidade;
     document.getElementById("idade").value = empregado.idade;
     document.getElementById("votos").value  = empregado.votos;
 }
@@ -159,7 +159,7 @@ function atualiza(){
 
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
-        debugger
+        
         var table = document.getElementById("tabela");
         var elemento = document.getElementsByName("tr")
         if(elemento.length != 0){
@@ -169,12 +169,13 @@ function atualiza(){
         if (this.readyState == 4) {
            
             if (this.status == 200) {
+                debugger
                 // sucesso na requisicao
                 var retorno = JSON.parse(this.responseText);
-                var guaxinims = retorno.dados;
-                for (var i = 0; i < guaxinims.length; i++) {
-                    var guaxinim = guaxinims[i];
-                    mostrarDadosDoEmpregado(guaxinims);
+                var Array = retorno.dados;
+                for (var i = 0; i < Array.length; i++) {
+                    var guaxinim = Array[i];
+                    mostrarDadosDoEmpregado(guaxinim);
                     
                 }
             } else {
@@ -194,7 +195,7 @@ function atualiza(){
 function enviar() {
     
     var xhttp = new XMLHttpRequest();
-    xhttp.open('POST', 'http://rest-api-employees.jmborges.site/api/v1/create', true);
+    xhttp.open('POST', 'https://private-071734-juliobrych.apiary-mock.com/guaxinim', true);
     xhttp.setRequestHeader('Content-type', 'application/json');
     
     //objeto fixo de exemplo - no trabalho tem que obter os dados do formulário

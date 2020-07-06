@@ -27,7 +27,7 @@ tr{
     border-bottom: solid 1px black ;
 }
 td{
-    width: 300px;
+    width: 50px;
     padding-top: 65.8px;
     padding-bottom: 65.8px;
     padding-left: 4px;
@@ -43,7 +43,7 @@ tn{
     border-right: solid 2px black;
     font-family: Calibri,'Gill Sans', 'Trebuchet MS', sans-serif;
 }
-ts{
+tc{
     width: 130px;
     padding-top: 65.8px;
     padding-bottom: 65.8px;
@@ -59,10 +59,13 @@ ti{
     border-right: solid 2px black;
     font-family: Calibri,'Gill Sans', 'Trebuchet MS', sans-serif;
 }
-ta{
-    width: 115px;
-    height: 150px;
-    border-right: solid 2px black
+tv{
+    width: 100px;
+    padding-top: 65.8px;
+    padding-bottom: 65.8px;
+    padding-left: 4px;
+    border-right: solid 2px black;
+    font-family: Calibri,'Gill Sans', 'Trebuchet MS', sans-serif;
 }
 
 tp {
