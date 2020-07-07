@@ -21,7 +21,7 @@ function verificaCampos(){      //feito
 }
 
 
-function mostrarDadosDoEmpregado(guaxinims) {       //feito
+function mostrarDadosDoGuaxinim(guaxinims) {       //feito
     var identificador = guaxinims.id;
     var nome = guaxinims.nome;
     var cidade = guaxinims.cidade;
@@ -84,10 +84,9 @@ function verOQueFaz(){      //feito
                 if (this.status == 200) {
                     // sucesso na requisicao
                     var retorno = JSON.parse(this.responseText);
-                    var empregado = retorno.dados;
-                    alert('Empregado ' + empregado.name + " atualizado com sucesso");
+                    alert('guaxinim ' + retorno.name + " atualizado com sucesso");
                     document.getElementById("botao").value = "Salvar";
-                    document.getElementById("titulo").innerHTML = "Adicionando novo empregado";
+                    document.getElementById("titulo").innerHTML = "Adicionando novo Guaxinim";
                     document.getElementById("idAtual").innerHTML = "";      
                 } else {
                     //erro na requisicao
@@ -118,7 +117,7 @@ function editar(id) {       //feito
                 // sucesso na requisicao
                 var retorno = JSON.parse(this.responseText);
                 document.getElementById("botao").textContent = "Editar";
-                document.getElementById("titulo").innerHTML = "Editando dados do Empregado:";
+                document.getElementById("titulo").innerHTML = "Editando dados do Guaxinim:";
                 document.getElementById("idAtual").innerHTML = retorno.id;
                poeNoForm(retorno);                
             } else {
@@ -140,7 +139,7 @@ function poeNoForm(retorno)     //feito
 
 function excluir(id) {      //feito
     debugger
-    if (confirm("Deseja realmente apagar este empregado?")) {
+    if (confirm("Deseja realmente apagar este Guaxinim?")) {
         var xhttp = new XMLHttpRequest();
         xhttp.open('DELETE', 'https://private-071734-juliobrych.apiary-mock.com/guaxinim/'+id, true);
         xhttp.setRequestHeader('Content-type', 'application/json');
@@ -179,7 +178,7 @@ function atualiza(){        //feito
                 var Array = retorno.dados;
                 for (var i = 0; i < Array.length; i++) {
                     var guaxinim = Array[i];
-                    mostrarDadosDoEmpregado(guaxinim);
+                    mostrarDadosDoGuaxinim(guaxinim);
                     
                 }
             } else {
@@ -203,7 +202,7 @@ function enviar() {     //ta funcionando
     xhttp.setRequestHeader('Content-type', 'application/json');
     
     //objeto fixo de exemplo - no trabalho tem que obter os dados do formulário
-    var novoEmpregado = {
+    var novoGuaxinim = {
         nome : document.getElementById("nome").value,
         cidade :  document.getElementById("cidade").value,
         idade : document.getElementById("idade").value,
@@ -222,7 +221,7 @@ function enviar() {     //ta funcionando
                 //sucesso na requisicao
                 var retorno = JSON.parse(this.responseText);
                 var nome = retorno.nome;
-                alert("O empregado " + nome + " foi cadastrado com sucesso!");
+                alert("O Guaxinim " + nome + " foi cadastrado com sucesso!");
             } else {
                 //erro na requisicao
                 alert('Ocorreu um erro na requisição (status: ' + this.status + ')');
@@ -231,6 +230,6 @@ function enviar() {     //ta funcionando
         
     }
    
-    var formatoJson = JSON.stringify(novoEmpregado);
+    var formatoJson = JSON.stringify(novoGuaxinim);
     xhttp.send(formatoJson);
 }
