@@ -1,25 +1,27 @@
-function verificaCampos(){
-
+function verificaCampos(){      //feito
+    
 
     var inpNom = document.getElementById("nome");
-    var inSal = document.getElementById("Cidade");
+    var inCid = document.getElementById("cidade");
     var inIda = document.getElementById("idade");
+    var inVot = document.getElementById("votos");
     if (!inpNom.checkValidity()) {
      alert(inpNom.validationMessage);
     }
-    else if (!inSal.checkValidity()) {
-        alert(inSal.validationMessage);
+    else if (!inCid.checkValidity()) {
+        alert(inCid.validationMessage);
     }
     else if(!inIda.checkValidity()){
         alert(inIda.validationMessage);
-    }
-    else{
+    }else if(!inVot.checkValidity()){
+        alert(inVot.validationMessage);
+    }else{
         verOQueFaz();
     }
 }
 
 
-function mostrarDadosDoEmpregado(guaxinims) {
+function mostrarDadosDoEmpregado(guaxinims) {       //feito
     var identificador = guaxinims.id;
     var nome = guaxinims.nome;
     var cidade = guaxinims.cidade;
@@ -59,15 +61,16 @@ function mostrarDadosDoEmpregado(guaxinims) {
 
     table.appendChild(tr);
 }
-function verOQueFaz(){
+function verOQueFaz(){      //feito
+    
      if( document.getElementById("botao").innerHTML == "Editar")
      {        
         var xhttp = new XMLHttpRequest();       
-        xhttp.open('PUT', '	https://private-071734-juliobrych.apiary-mock.com/guaxinim/'+document.getElementById("idAtual").innerHTML, true);
+        xhttp.open('PUT', 'https://private-071734-juliobrych.apiary-mock.com/guaxinim/'+document.getElementById("idAtual").innerHTML, true);
         xhttp.setRequestHeader('Content-type', 'application/json');
        
 
-        var empregadoEditado = {
+        var guaximinEditado = {
             nome : document.getElementById("nome").value,
             cidade :  document.getElementById("cidade").value,
             idade: document.getElementById("idade").value,
@@ -81,7 +84,7 @@ function verOQueFaz(){
                 if (this.status == 200) {
                     // sucesso na requisicao
                     var retorno = JSON.parse(this.responseText);
-                    var empregado = retorno.data;
+                    var empregado = retorno.dados;
                     alert('Empregado ' + empregado.name + " atualizado com sucesso");
                     document.getElementById("botao").value = "Salvar";
                     document.getElementById("titulo").innerHTML = "Adicionando novo empregado";
@@ -93,7 +96,7 @@ function verOQueFaz(){
             }
           
         };
-         var formatoJson = JSON.stringify(empregadoEditado);
+         var formatoJson = JSON.stringify(guaximinEditado);
          xhttp.send(formatoJson);
          atualiza();
      }
@@ -103,10 +106,10 @@ function verOQueFaz(){
      }
 }
 
-function editar(id) {
-
+function editar(id) {       //feito
+    
     var xhttp = new XMLHttpRequest();
-    xhttp.open('GET', '	https://private-071734-juliobrych.apiary-mock.com/guaxinim/'+id, true);
+    xhttp.open('GET', 'https://private-071734-juliobrych.apiary-mock.com/guaxinim/'+id, true);
     xhttp.send();
     xhttp.onreadystatechange = function() {
     
@@ -114,11 +117,10 @@ function editar(id) {
             if (this.status == 200) {
                 // sucesso na requisicao
                 var retorno = JSON.parse(this.responseText);
-                var empregado = retorno.data;
                 document.getElementById("botao").textContent = "Editar";
                 document.getElementById("titulo").innerHTML = "Editando dados do Empregado:";
-                document.getElementById("idAtual").innerHTML = empregado.id;
-               poeNoForm(empregado);                
+                document.getElementById("idAtual").innerHTML = retorno.id;
+               poeNoForm(retorno);                
             } else {
                 //erro na requisicao
                 alert('Ocorreu um erro na requisição (status: ' + this.status + ')');
@@ -127,24 +129,27 @@ function editar(id) {
       
     };
 }
-function poeNoForm(empregado)
+function poeNoForm(retorno)     //feito
 {   
-    document.getElementById("nome").value = empregado.nome;
-    document.getElementById("Cidade").value = empregado.cidade;
-    document.getElementById("idade").value = empregado.idade;
-    document.getElementById("votos").value  = empregado.votos;
+    document.getElementById("nome").value = retorno.nome;
+    document.getElementById("cidade").value = retorno.cidade;
+    document.getElementById("idade").value = retorno.idade;
+    document.getElementById("votos").value  = retorno.votos;
 }
-function excluir(id) {
+
+
+function excluir(id) {      //feito
+    debugger
     if (confirm("Deseja realmente apagar este empregado?")) {
-        str1 = 'https://private-071734-juliobrych.apiary-mock.com/guaxinim/';
-        str = str1 + id;
         var xhttp = new XMLHttpRequest();
-        xhttp.open('DELETE', str, true);
+        xhttp.open('DELETE', 'https://private-071734-juliobrych.apiary-mock.com/guaxinim/'+id, true);
         xhttp.setRequestHeader('Content-type', 'application/json');
         xhttp.send();
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4) {
                 if (this.status == 200) {
+                    var retorno = JSON.parse(this.responseText);
+                    alert("Matarão o "+retorno.nome+"!")
                     location.reload();
                 }
             }
@@ -155,7 +160,7 @@ function excluir(id) {
 
 
 //listando dados
-function atualiza(){
+function atualiza(){        //feito
 
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
@@ -169,7 +174,6 @@ function atualiza(){
         if (this.readyState == 4) {
            
             if (this.status == 200) {
-                debugger
                 // sucesso na requisicao
                 var retorno = JSON.parse(this.responseText);
                 var Array = retorno.dados;
@@ -192,8 +196,8 @@ function atualiza(){
 
 
 //enviando dados { "nome": "test", "cidade": "123", "idade": "23" }
-function enviar() {
-    
+function enviar() {     //ta funcionando
+    debugger
     var xhttp = new XMLHttpRequest();
     xhttp.open('POST', 'https://private-071734-juliobrych.apiary-mock.com/guaxinim', true);
     xhttp.setRequestHeader('Content-type', 'application/json');
@@ -217,7 +221,7 @@ function enviar() {
                
                 //sucesso na requisicao
                 var retorno = JSON.parse(this.responseText);
-                var nome = retorno.dados.name;
+                var nome = retorno.nome;
                 alert("O empregado " + nome + " foi cadastrado com sucesso!");
             } else {
                 //erro na requisicao
@@ -229,5 +233,4 @@ function enviar() {
    
     var formatoJson = JSON.stringify(novoEmpregado);
     xhttp.send(formatoJson);
-    alert("bruxaria");// NAO APAGAR ESSA MERDA
 }
